@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
       })),
       message: project.status === 'completed' 
         ? `Analyzed in ${Math.round((project.processingTime || 0) / 1000)}s!`
-        : `Failed: ${project.error}`
+        : `Failed: ${(project as any).error}`
     })
 
   } catch (error: any) {

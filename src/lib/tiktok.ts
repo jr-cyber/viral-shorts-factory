@@ -24,7 +24,7 @@ export function getTikTokAuthUrl() {
   return `${tiktokEndpoints.authorization}?${params.toString()}`
 }
 
-export async function getTikTokAccessToken(code) {
+export async function getTikTokAccessToken(code: string) {
   const response = await fetch(tiktokEndpoints.accessToken, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -39,7 +39,7 @@ export async function getTikTokAccessToken(code) {
   return response.json()
 }
 
-export async function publishTikTokVideo(accessToken, videoUrl, title) {
+export async function publishTikTokVideo(accessToken: string, videoUrl: string, title: string) {
   const response = await fetch(tiktokEndpoints.postVideo, {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
