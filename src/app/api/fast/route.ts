@@ -45,6 +45,7 @@ export async function GET(request: NextRequest) {
   try {
     if (projectId) {
       const project = getProject(projectId)
+      const projectAny = project as any
       return NextResponse.json({
         projectId: project.id,
         status: project.status,
