@@ -178,7 +178,7 @@ export async function POST(request: NextRequest) {
     
     // Cleanup on error
     const files = require('fs').readdirSync(UPLOADS_DIR).filter((f: string) => f.startsWith(projectId))
-    files.forEach(f => {
+    files.forEach((f: string) => {
       try { unlinkSync(join(UPLOADS_DIR, f)) } catch {}
     })
     
