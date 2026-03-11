@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({
         projectId: project.id,
         status: project.status,
-        clips: project.clips,
+        clips: projectAny.clips,
         processingTime: project.processingTime
       })
     }
